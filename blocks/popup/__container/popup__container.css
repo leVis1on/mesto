@@ -1,0 +1,15 @@
+.popup__container {
+    display: grid;
+    width: 462px;
+    grid-template-columns: 430px 32px;
+    grid-template-rows: 32px 330px 32px;
+    align-content: center;
+}
+
+@media (max-width: 600px) {
+    .popup__container {
+        width: 300px;
+        grid-template-columns: 282px 18px;
+        grid-template-rows: 43px 322px 43px;
+    }
+}

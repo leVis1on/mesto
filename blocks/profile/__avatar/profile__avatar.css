@@ -1,0 +1,19 @@
+.profile__avatar {
+    width: 120px;
+    border-radius: 100%;
+    grid-row: 1;
+    grid-column: 1;
+}
+
+@media (max-width: 900px) {
+    .profile__avatar {
+        margin-left: 27px;
+    }
+}
+
+@media (max-width: 740px) {
+    .profile__avatar {
+        justify-self: center;
+        margin-left: 0;
+    }
+}

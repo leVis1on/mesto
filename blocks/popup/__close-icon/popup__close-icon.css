@@ -1,0 +1,21 @@
+.popup__close-icon {
+    width: 40px;
+    transform: rotate(45deg);
+    align-self: center;
+    grid-row: 1;
+    grid-column: 2;
+}
+
+.popup__close-icon:hover {
+    cursor: pointer;
+    opacity: 0.6;
+}
+
+@media (max-width: 600px) {
+    .popup__close-icon {
+        grid-column: 1;
+        align-self: start;
+        justify-self: end;
+        width: 26px;
+    }
+}

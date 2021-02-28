@@ -1,0 +1,9 @@
+.element__picture {
+    width: 282px;
+    height: 282px;
+    object-fit: cover;
+    object-position: center;
+    grid-column: 1;
+    grid-row: 1;
+    border-radius: 10px 10px 0 0;
+}
