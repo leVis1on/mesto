@@ -8,8 +8,8 @@
 
 @media (max-width: 600px) {
     .popup__container {
-        width: 300px;
-        grid-template-columns: 282px 18px;
+        width: 282px;
+        grid-template-columns: 282px;
         grid-template-rows: 43px 322px 43px;
     }
 }
