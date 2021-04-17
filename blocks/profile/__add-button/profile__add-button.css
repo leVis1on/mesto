@@ -6,6 +6,9 @@
     grid-row: 1;
     grid-column: 3;
     background-image: url(../../../images/add-button.svg);
+    padding: 0;
+    border: none;
+    background-color: transparent;
 }
 
 .profile__add-button:hover {

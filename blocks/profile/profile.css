@@ -13,3 +13,9 @@
         grid-template-rows: repeat(3, max-content);
     }
 }
+
+@media (max-width: 425px) {
+    .profile {
+        gap: 0px;
+    }
+}

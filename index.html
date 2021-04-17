@@ -7,80 +7,79 @@
         <link rel="stylesheet" href="pages/index.css">
     </head>
     <body class="page">
-        <header class="header header_position_center">
+        <header class="header section">
             <img class="header__logo" src="images/logo.svg" alt="Лого сервиса 'Место'">
-            <hr class="header__line">
         </header>
 
         <div class="popup">
             <div class="popup__container">
-                <img class="popup__close-icon" src="images/close-icon.svg" alt="Крестик">
-                <div class="popup__window">
+                <button class="popup__close-icon" type="button"><img  src="images/close-icon.svg" alt="Крестик"></button>
+                <form class="popup__window" id="form" name="edit">
                     <h2 class="popup__title">Редактировать профиль</h2>
                     <ul class="popup__fields">
-                        <li><input class="popup__field" id="name" type="text"></li>
-                        <li><input class="popup__field" id="info" type="text"></li>
+                        <li><input class="popup__field" id="name" name="nickname" type="text"></li>
+                        <li><input class="popup__field" id="info" name="info" type="text"></li>
                     </ul>
-                    <button class="popup__save-button">Сохранить</button>
-                </div>
+                    <button class="popup__save-button" type="submit">Сохранить</button>
+                </form>
             </div>
         </div>
 
         <main>
 
-            <section class="profile profile_position_center">
+            <section class="profile section">
                 <img class="profile__avatar" src="images/avatar-image.jpg" alt="Аватар профиля">
                 <div class="profile__info">
                     <h1 class="profile__name">Жак-Ив Кусто</h1>
-                    <img class="profile__edit-button" src="images/edit-button.svg" alt="Кнопка редактирования">
+                    <button class="profile__edit-button" type="button"><img src="images/edit-button.svg" alt="Кнопка редактирования"></button>
                     <h2 class="profile__subtitle">Исследователь океана</h2>
                 </div>
-                <span class="profile__add-button"></span>
+                <button class="profile__add-button" type="button"></button>
             </section>
 
-            <section class="elements elements_position_center">
+            <section class="elements section">
 
                 <div class="element">
                     <img class="element__picture" src="images/karachaevsk.jpg" alt="Карачаевск">
                     <h2 class="element__title">Карачаевск</h2>
-                    <img class="element__like-button" src="images/heart.svg" alt="Сердечко)">
+                    <button class="element__like-button" type="button"><img src="images/heart.svg" alt="Сердечко)"></button>
                 </div>
 
                 <div class="element">
                     <img class="element__picture" src="images/elbrus.png" alt="Гора Эльбрус">
                     <h2 class="element__title">Гора Эльбрус</h2>
-                    <img class="element__like-button" src="images/heart.svg" alt="Сердечко)">
+                    <button class="element__like-button" type="button"><img src="images/heart.svg" alt="Сердечко)"></button>
                 </div>
 
                 <div class="element">
                     <img class="element__picture" src="images/dombay.png" alt="Домбай">
                     <h2 class="element__title">Домбай</h2>
-                    <img class="element__like-button" src="images/heart.svg" alt="Сердечко)">
+                    <button class="element__like-button" type="button"><img src="images/heart.svg" alt="Сердечко)"></button>
                 </div>
 
                 <div class="element">
                     <img class="element__picture" src="images/elbrus.png" alt="Гора Эльбрус">
                     <h2 class="element__title">Гора Эльбрус</h2>
-                    <img class="element__like-button" src="images/heart.svg" alt="Сердечко)">
+                    <button class="element__like-button" type="button"><img src="images/heart.svg" alt="Сердечко)"></button>
                 </div>
 
                 <div class="element">
                     <img class="element__picture" src="images/dombay.png" alt="Домбай">
                     <h2 class="element__title">Домбай</h2>
-                    <img class="element__like-button" src="images/heart.svg" alt="Сердечко)">
+                    <button class="element__like-button" type="button"><img src="images/heart.svg" alt="Сердечко)"></button>
                 </div>
 
                 <div class="element">
                     <img class="element__picture" src="images/karachaevsk.jpg" alt="Карачаевск">
                     <h2 class="element__title">Карачаево-Черкесия</h2>
-                    <img class="element__like-button" src="images/heart.svg" alt="Сердечко)">
+                    <button class="element__like-button" type="button"><img src="images/heart.svg" alt="Сердечко)"></button>
                 </div>
 
             </section>
 
         </main>
 
-        <footer class="footer footer_position_center">
+        <footer class="footer section">
             <h2 class="footer__copyright">© 2020 Mesto Russia</h2>
         </footer>
 

@@ -13,11 +13,18 @@
     max-width: 500px;
 }
 
+@media (max-width: 900px) {
+    .profile__subtitle {
+        max-width: 325px;
+    }
+}
+
 @media (max-width: 425px) {
     .profile__subtitle {
         font-style: normal;
         font-weight: normal;
         font-size: 14px;
         line-height: 17px;
+        max-width: 250px;
     }
 }

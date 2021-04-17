@@ -8,6 +8,7 @@
 
 /* BLOCKS */
 
+@import url(../blocks/section/section.css);
 @import url(../blocks/page/page.css);
 @import url(../blocks/header/header.css);
 @import url(../blocks/profile/profile.css);
@@ -20,7 +21,6 @@
 /* ELEMENTS */
 
 @import url(../blocks/header/__logo/header__logo.css);
-@import url(../blocks/header/__line/header__line.css);
 
 @import url(../blocks/profile/__avatar/profile__avatar.css);
 @import url(../blocks/profile/__edit-button/profile__edit-button.css);
@@ -45,8 +45,4 @@
 
 /* MODIFICATORS */
 
-@import url(../blocks/header/_position/header_position_center.css);
-@import url(../blocks/profile/_position/profile_position_center.css);
-@import url(../blocks/elements/_position/elements_position_center.css);
-@import url(../blocks/footer/_position/footer_position_center.css);
 @import url(../blocks/popup/_opened/popup_opened.css);

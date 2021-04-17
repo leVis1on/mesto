@@ -4,6 +4,9 @@
     align-self: center;
     grid-row: 1;
     grid-column: 2;
+    padding: 0;
+    border: none;
+    background-color: transparent;
 }
 
 .popup__close-icon:hover {
