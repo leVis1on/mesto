@@ -30,6 +30,7 @@
 @import url(../blocks/profile/__add-button/profile__add-button.css);
 
 @import url(../blocks/element/__like-button/element__like-button.css);
+@import url(../blocks/element/__trash-button/element__trash-button.css);
 @import url(../blocks/element/__picture/element__picture.css);
 @import url(../blocks/element/__title/element__title.css);
 
@@ -42,7 +43,13 @@
 @import url(../blocks/popup/__save-button/popup__save-button.css);
 @import url(../blocks/popup/__title/popup__title.css);
 @import url(../blocks/popup/__window/popup__window.css);
+@import url(../blocks/popup/__pic-container/popup__pic-container.css);
+@import url(../blocks/popup/__pic-subtitle/popup__pic-subtitle.css);
+@import url(../blocks/popup/__image/popup__image.css);
 
 /* MODIFICATORS */
 
 @import url(../blocks/popup/_opened/popup_opened.css);
+@import url(../blocks/popup/_closed/popup_closed.css);
+@import url(../blocks/popup/_dark/popup_dark.css);
+@import url(../blocks/element/__like-button/_active/element__like-button_active.css);

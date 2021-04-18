@@ -7,3 +7,7 @@
     grid-row: 1;
     border-radius: 10px 10px 0 0;
 }
+
+.element__picture:hover {
+    cursor: pointer;
+}
