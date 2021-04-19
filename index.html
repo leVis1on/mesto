@@ -11,42 +11,6 @@
             <img class="header__logo" src="images/logo.svg" alt="Лого сервиса 'Место'">
         </header>
 
-        <div class="popup">
-            <div class="popup__container">
-                <button class="popup__close-icon" type="button"><img  src="images/close-icon.svg" alt="Крестик"></button>
-                <form class="popup__window" id="form" name="edit">
-                    <h2 class="popup__title">Редактировать профиль</h2>
-                    <ul class="popup__fields">
-                        <li><input class="popup__field" id="name" name="nickname" type="text"></li>
-                        <li><input class="popup__field" id="info" name="info" type="text"></li>
-                    </ul>
-                    <button class="popup__save-button" type="submit">Сохранить</button>
-                </form>
-            </div>
-        </div>
-
-        <div class="popup">
-            <div class="popup__container">
-                <button class="popup__close-icon" type="button"><img  src="images/close-icon.svg" alt="Крестик"></button>
-                <form class="popup__window" id="pictureForm" name="pictureEdit">
-                    <h2 class="popup__title">Новое место</h2>
-                    <ul class="popup__fields">
-                        <li><input class="popup__field" id="geoName" name="geoName" type="text" placeholder="Название"></li>
-                        <li><input class="popup__field" id="pictureUrl" name="pictureUrl" type="text" placeholder="Ссылка на картинку"></li>
-                    </ul>
-                    <button class="popup__save-button" type="submit">Сохранить</button>
-                </form>
-            </div>
-        </div>
-
-        <div class="popup popup_dark">
-            <div class="popup__pic-container">
-                <button class="popup__close-icon" type="button"><img  src="images/close-icon.svg" alt="Крестик"></button>
-                <img class="popup__image" src="https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg" alt="Байкал">
-                <p class="popup__pic-subtitle">Байкал</p>
-            </div>
-        </div>
-
         <main>
 
             <section class="profile section">
@@ -60,16 +24,6 @@
             </section>
 
             <section class="elements section">
-
-                <template id="card">
-                    <div class="element">
-                        <img class="element__picture">
-                        <h2 class="element__title"></h2>
-                        <button class="element__trash-button" type="button"></button>
-                        <button class="element__like-button" type="button"></button>
-                    </div>
-                </template>
-
             </section>
 
         </main>
@@ -77,6 +31,51 @@
         <footer class="footer section">
             <h2 class="footer__copyright">© 2020 Mesto Russia</h2>
         </footer>
+
+        <div class="popup" id="editPopup">
+            <div class="popup__container">
+                <button class="popup__close-icon" id="editClose" type="button"><img  src="images/close-icon.svg" alt="Крестик"></button>
+                <form class="popup__window" id="form" name="edit">
+                    <h2 class="popup__title">Редактировать профиль</h2>
+                    <ul class="popup__fields">
+                        <li><input class="popup__field" id="name" name="nickname" type="text" placeholder="Введите свое имя" required></li>
+                        <li><input class="popup__field" id="info" name="info" type="text" placeholder="Введите информацию о себе" required></li>
+                    </ul>
+                    <button class="popup__save-button" id="editButton" type="submit">Сохранить</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="popup" id="addPopup">
+            <div class="popup__container">
+                <button class="popup__close-icon" id="addClose" type="button"><img  src="images/close-icon.svg" alt="Крестик"></button>
+                <form class="popup__window" id="pictureForm" name="pictureEdit">
+                    <h2 class="popup__title">Новое место</h2>
+                    <ul class="popup__fields">
+                        <li><input class="popup__field" id="geoName" name="geoName" type="text" placeholder="Название" required></li>
+                        <li><input class="popup__field" id="pictureUrl" name="pictureUrl" type="text" placeholder="Ссылка на картинку" type="url" required></li>
+                    </ul>
+                    <button class="popup__save-button" id="addButton" type="submit">Сохранить</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="popup popup_dark" id="picPopup">
+            <div class="popup__pic-container">
+                <button class="popup__close-icon" id="picClose" type="button"><img  src="images/close-icon.svg" alt="Крестик"></button>
+                <img class="popup__image" src="https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg" alt="Байкал">
+                <p class="popup__pic-subtitle">Байкал</p>
+            </div>
+        </div>
+
+        <template id="card">
+            <div class="element">
+                <img class="element__picture">
+                <h2 class="element__title"></h2>
+                <button class="element__trash-button" type="button"></button>
+                <button class="element__like-button" type="button"></button>
+            </div>
+        </template>
 
         <script src="scripts/script.js"></script>
     </body>
