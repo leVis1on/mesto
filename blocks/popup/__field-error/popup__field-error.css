@@ -1,0 +1,19 @@
+.popup__field-error {
+    position: relative;
+    height: 32px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 15px;
+    color: #FF0000;
+    opacity: 0;
+    transition: 0.3s;
+    max-width: 358px;
+    margin-top: -25px;
+}
+
+@media (max-width: 600px) {
+    .popup__field-error {
+        max-width: 238px;
+    }
+}

@@ -10,6 +10,6 @@
     .popup__container {
         width: 282px;
         grid-template-columns: 282px;
-        grid-template-rows: 43px 322px 43px;
+        grid-template-rows: 65px 322px 43px;
     }
 }

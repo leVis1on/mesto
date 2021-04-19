@@ -5,6 +5,7 @@ const picClose = document.querySelector('#picClose');
 const editPopup = document.querySelector('#editPopup');
 const addPopup = document.querySelector('#addPopup');
 const picPopup = document.querySelector('#picPopup');
+const overlay = document.querySelector('.popup');
 
 const cardsContainer = document.querySelector('.elements');
 
@@ -53,13 +54,35 @@ const initialCards = [
     }
 ];
 
+function closeAll () {
+  closePopup(editPopup);
+  closePopup(addPopup);
+  closePopup(picPopup);
+}
+
+function handleOverlay (evt) {
+  if (evt.target.classList.contains('popup') || evt.target.classList.contains('popup__container') || evt.target.classList.contains('popup__pic-container')) {
+    closeAll();
+  }
+}
+
+function handleEsc (evt) {
+  if (evt.key === "Escape") {
+    closeAll();
+  }
+}
+
 function openPopup(popup) {
   popup.classList.remove('popup_closed');
   popup.classList.add('popup_opened');
+  document.addEventListener('keyup', handleEsc);
+  document.addEventListener('click', handleOverlay);
 };
 
 function closePopup(popup) {
   popup.classList.add('popup_closed');
+  document.removeEventListener('keyup', handleEsc);
+  document.removeEventListener('click', handleOverlay);
 };
 
 initialCards.forEach(function (key) {
@@ -70,6 +93,7 @@ function openPopupEdit() {
     formName.value = profileName.textContent; 
     formInfo.value = profileInfo.textContent; 
     openPopup(editPopup);
+    Array.from(formElement.querySelectorAll('.popup__field')).forEach((inputElement) => {checkInputValidity(formElement, inputElement);});  
 };
 
 function openPopupAdd() {
@@ -129,6 +153,8 @@ function addNewCard (evt) {
   evt.preventDefault();
   addCard(createCard(formGeoName.value, formPictureUrl.value))
 };
+
+
 
 editButton.addEventListener('click', openPopupEdit);
 addButton.addEventListener('click', openPopupAdd);

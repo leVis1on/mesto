@@ -35,11 +35,13 @@
         <div class="popup" id="editPopup">
             <div class="popup__container">
                 <button class="popup__close-icon" id="editClose" type="button"><img  src="images/close-icon.svg" alt="Крестик"></button>
-                <form class="popup__window" id="form" name="edit">
+                <form class="popup__window" id="form" name="edit" novalidate>
                     <h2 class="popup__title">Редактировать профиль</h2>
                     <ul class="popup__fields">
-                        <li><input class="popup__field" id="name" name="nickname" type="text" placeholder="Введите свое имя" required></li>
-                        <li><input class="popup__field" id="info" name="info" type="text" placeholder="Введите информацию о себе" required></li>
+                        <li><input class="popup__field" id="name" name="nickname" type="text" placeholder="Имя" minlength="2" maxlength="40" required ></li>
+                        <span class="popup__field-error name-error"></span>
+                        <li><input class="popup__field" id="info" name="info" type="text" placeholder="О себе" minlength="2" maxlength="200" required></li>
+                        <span class="popup__field-error info-error"></span>
                     </ul>
                     <button class="popup__save-button" id="editButton" type="submit">Сохранить</button>
                 </form>
@@ -49,11 +51,13 @@
         <div class="popup" id="addPopup">
             <div class="popup__container">
                 <button class="popup__close-icon" id="addClose" type="button"><img  src="images/close-icon.svg" alt="Крестик"></button>
-                <form class="popup__window" id="pictureForm" name="pictureEdit">
+                <form class="popup__window" id="pictureForm" name="pictureEdit" novalidate>
                     <h2 class="popup__title">Новое место</h2>
                     <ul class="popup__fields">
-                        <li><input class="popup__field" id="geoName" name="geoName" type="text" placeholder="Название" required></li>
+                        <li><input class="popup__field" id="geoName" name="geoName" type="text" placeholder="Название" required minlength="1" maxlength="30"></li>
+                        <span class="popup__field-error geoName-error"></span>
                         <li><input class="popup__field" id="pictureUrl" name="pictureUrl" type="url" placeholder="Ссылка на картинку" required></li>
+                        <span class="popup__field-error pictureUrl-error"></span>
                     </ul>
                     <button class="popup__save-button" id="addButton" type="submit">Сохранить</button>
                 </form>
@@ -78,5 +82,6 @@
         </template>
 
         <script src="scripts/script.js"></script>
+        <script src="scripts/validate.js"></script>
     </body>
 </html>
