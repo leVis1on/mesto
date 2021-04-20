@@ -29,8 +29,10 @@ const showInputError = (formElement, inputElement, errorMessage) => {
   const toggleButtonState = (inputList, buttonElement) => {
     if (hasInvalidInput(inputList)) {
     buttonElement.classList.add('popup__save-button_inactive');
+    buttonElement.disabled = true;
   } else {
     buttonElement.classList.remove('popup__save-button_inactive');
+    buttonElement.disabled = false;
   } 
   }
   

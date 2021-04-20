@@ -27,6 +27,8 @@ const picFormElement = document.querySelector('#pictureForm');
 
 const cardTemplate = document.querySelector('#card').content;
 
+let openedPopup;
+
 const initialCards = [
     {
       name: 'Архыз',
@@ -54,25 +56,20 @@ const initialCards = [
     }
 ];
 
-function closeAll () {
-  closePopup(editPopup);
-  closePopup(addPopup);
-  closePopup(picPopup);
-}
-
 function handleOverlay (evt) {
   if (evt.target.classList.contains('popup') || evt.target.classList.contains('popup__container') || evt.target.classList.contains('popup__pic-container')) {
-    closeAll();
+    closePopup(openedPopup);
   }
 }
 
 function handleEsc (evt) {
   if (evt.key === "Escape") {
-    closeAll();
+    closePopup(openedPopup);
   }
 }
 
 function openPopup(popup) {
+  openedPopup = popup;
   popup.classList.remove('popup_closed');
   popup.classList.add('popup_opened');
   document.addEventListener('keyup', handleEsc);
@@ -96,7 +93,10 @@ function openPopupEdit() {
     Array.from(formElement.querySelectorAll('.popup__field')).forEach((inputElement) => {checkInputValidity(formElement, inputElement);});  
 };
 
-function openPopupAdd() {
+function openPopupAdd(evt) {
+  const addSaveButton = document.querySelector('#addButton');
+  addSaveButton.classList.add('popup__save-button_inactive');
+  addSaveButton.disabled = true;
   openPopup(addPopup);
 };
 
@@ -121,6 +121,8 @@ function formSubmitHandler (evt) {
 
 function createCard(cardTitle, cardUrl) {
   const cardElement = cardTemplate.querySelector('.element').cloneNode(true);
+  const picPopupImage = picPopup.querySelector('.popup__image');
+  const picPopupSubtitle = picPopup.querySelector('.popup__pic-subtitle');
   cardElement.querySelector('.element__picture').src = cardUrl;
   cardElement.querySelector('.element__picture').alt = cardTitle;
   cardElement.querySelector('.element__title').textContent = cardTitle;
@@ -132,9 +134,9 @@ cardElement.querySelector('.element__trash-button').addEventListener('click', fu
     listItem.remove();
   });
 cardElement.querySelector('.element__picture').addEventListener('click', function () {
-    picPopup.querySelector('.popup__image').src = cardElement.querySelector('.element__picture').src;
-    picPopup.querySelector('.popup__image').alt = cardElement.querySelector('.element__picture').alt;
-    picPopup.querySelector('.popup__pic-subtitle').textContent = cardElement.querySelector('.element__title').textContent;
+    picPopupImage.src = cardUrl;
+    picPopupImage.alt = cardTitle;
+    picPopupSubtitle.textContent = cardTitle; 
     openPopup(picPopup);
 });
   return cardElement
@@ -142,16 +144,13 @@ cardElement.querySelector('.element__picture').addEventListener('click', functio
 
 function addCard (card) {
   cardsContainer.prepend(card);
-  picFormElement.reset();
-  if (addPopup.classList.contains('popup_opened')) {
-    closePopup(addPopup);
-  };
-  picFormElement.reset(); 
 };
 
 function addNewCard (evt) {
   evt.preventDefault();
   addCard(createCard(formGeoName.value, formPictureUrl.value))
+  closePopup(addPopup);
+  picFormElement.reset(); 
 };
 
 
