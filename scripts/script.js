@@ -27,6 +27,9 @@ const picFormElement = document.querySelector('#pictureForm');
 
 const cardTemplate = document.querySelector('#card').content;
 
+const picPopupImage = picPopup.querySelector('.popup__image');
+const picPopupSubtitle = picPopup.querySelector('.popup__pic-subtitle');
+
 let openedPopup;
 
 const initialCards = [
@@ -121,8 +124,6 @@ function formSubmitHandler (evt) {
 
 function createCard(cardTitle, cardUrl) {
   const cardElement = cardTemplate.querySelector('.element').cloneNode(true);
-  const picPopupImage = picPopup.querySelector('.popup__image');
-  const picPopupSubtitle = picPopup.querySelector('.popup__pic-subtitle');
   cardElement.querySelector('.element__picture').src = cardUrl;
   cardElement.querySelector('.element__picture').alt = cardTitle;
   cardElement.querySelector('.element__title').textContent = cardTitle;
