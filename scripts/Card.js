@@ -1,3 +1,4 @@
+import {openPopup} from './script.js';
 export default class Card {
     constructor (url, title, cardSelector) {
       this._url = url;
@@ -10,44 +11,21 @@ export default class Card {
       return cardElement; 
     }  
 
-    _handleOpenPopup() {
-      document.querySelector('#picPopup').classList.remove('popup_closed');
-      document.querySelector('#picPopup').classList.add('popup_opened');
-      document.addEventListener('keyup',  (evt) => {
-        if (evt.key === "Escape") {
-          this._handleClosePopup();
-        }
-      });
-      document.addEventListener('click', (evt) => {
-        if (evt.target.classList.contains('popup') || evt.target.classList.contains('popup__container') || evt.target.classList.contains('popup__pic-container')) {
-          this._handleClosePopup();
-        }
-      });
-    }
-  
-    _handleClosePopup() {
-      document.querySelector('#picPopup').classList.add('popup_closed');
-      document.removeEventListener('keyup',  (evt) => {
-        if (evt.key === "Escape") {
-          this._handleClosePopup();
-        }
-      });
-      document.removeEventListener('click', (evt) => {
-        if (evt.target.classList.contains('popup') || evt.target.classList.contains('popup__container') || evt.target.classList.contains('popup__pic-container')) {
-          this._handleClosePopup();
-        }
-      });
-    }
-  
-    _setEventListeners() {
+    _like() {
       this._element.querySelector('.element__like-button').addEventListener('click', (evt) => {
         evt.target.classList.toggle('element__like-button_active');
       }); 
+    }
+  
+    _setEventListeners() {
+      this._like();
       this._element.querySelector('.element__picture').addEventListener('click', () => {
-        document.querySelector('#picPopup').querySelector('.popup__image').src = this._url;
-        document.querySelector('#picPopup').querySelector('.popup__image').alt = this._title;
-        document.querySelector('#picPopup').querySelector('.popup__pic-subtitle').textContent = this._title; 
-        this._handleOpenPopup();
+        const picPopup = document.querySelector('#picPopup');
+        const picPopupImage = picPopup.querySelector('.popup__image');
+        picPopupImage.src = this._url;
+        picPopupImage.alt = this._title;
+        picPopup.querySelector('.popup__pic-subtitle').textContent = this._title; 
+        openPopup(picPopup);
       });
       this._element.querySelector('.element__trash-button').addEventListener('click', () => {
         const listItem = this._element.querySelector('.element__trash-button').closest('.element');
