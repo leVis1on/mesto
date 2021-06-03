@@ -8,6 +8,8 @@ const editPopup = document.querySelector('#editPopup');
 const addPopup = document.querySelector('#addPopup');
 const picPopup = document.querySelector('#picPopup');
 const picClose = document.querySelector('#picClose');
+const editForm = {formSelector: '#form', inputSelector: '.popup__field', submitButtonSelector: '.popup__save-button', inactiveButtonClass: 'popup__save-button_inactive', inputErrorClass: 'popup__field_type_error', errorClass: 'popup__field-error_active'};
+const addForm = {formSelector: '#pictureForm', inputSelector: '.popup__field', submitButtonSelector: '.popup__save-button', inactiveButtonClass: 'popup__save-button_inactive', inputErrorClass: 'popup__field_type_error', errorClass: 'popup__field-error_active'};
 
 const cardsContainer = document.querySelector('.elements');
 
@@ -61,7 +63,7 @@ initialCards.forEach(function (key) {
 }); 
 
 function handleOverlay (evt) {
-  if (evt.target.classList.contains('popup') || evt.target.classList.contains('popup__container') || evt.target.classList.contains('popup__pic-container')) { //без этих условий не срабатывает клик по оверлею сверху и снизу
+  if (evt.target.classList.contains('popup') || evt.target.classList.contains('popup__container') || evt.target.classList.contains('popup__pic-container')) { 
     closePopup(openedPopup);
   }
 }
@@ -88,7 +90,7 @@ function closePopup(popup) {
 function openPopupEdit() {
     formName.value = profileName.textContent; 
     formInfo.value = profileInfo.textContent; 
-    const validate = new FormValidator('#form', '.popup__field', '.popup__save-button', 'popup__save-button_inactive', 'popup__field_type_error', 'popup__field-error_active');
+    const validate = new FormValidator(editForm);
     validate.enableValidation();
     Array.from(formElement.querySelectorAll('.popup__field')).forEach((inputElement) => {validate._checkInputValidity(formElement, inputElement);}); 
     openPopup(editPopup);
@@ -98,7 +100,7 @@ function openPopupAdd() {
   const addSaveButton = document.querySelector('#addButton');
   addSaveButton.classList.add('popup__save-button_inactive');
   addSaveButton.disabled = true;
-  const validate = new FormValidator('#pictureForm', '.popup__field', '.popup__save-button', 'popup__save-button_inactive', 'popup__field_type_error', 'popup__field-error_active');
+  const validate = new FormValidator(addForm);
   validate.enableValidation();
   openPopup(addPopup);
 };
