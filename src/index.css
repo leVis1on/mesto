@@ -1,0 +1,62 @@
+/* NORMALIZE.CSS */
+
+@import url(./normalize.css);
+
+/* FONTS*/
+
+@import url(./fonts.css);
+
+/* BLOCKS */
+
+@import url(./section.css);
+@import url(./page.css);
+@import url(./header.css);
+@import url(./profile.css);
+@import url(./element.css);
+@import url(./elements.css);
+@import url(./footer.css);
+@import url(./popup.css);
+
+
+
+/* ELEMENTS */
+
+@import url(./header__logo.css);
+
+@import url(./profile__avatar.css);
+@import url(./profile__edit-button.css);
+@import url(./profile__info.css);
+@import url(./profile__name.css);
+@import url(./profile__subtitle.css);
+@import url(./profile__add-button.css);
+
+@import url(./element__like-button.css);
+@import url(./element__trash-button.css);
+@import url(./element__picture.css);
+@import url(./element__title.css);
+
+@import url(./footer__copyright.css);
+
+@import url(./popup__close-icon.css);
+@import url(./popup__fields.css);
+@import url(./popup__field.css);
+@import url(./popup__field-error.css);
+@import url(./popup__container.css);
+@import url(./popup__save-button.css);
+@import url(./popup__title.css);
+@import url(./popup__window.css);
+@import url(./popup__pic-container.css);
+@import url(./popup__pic-subtitle.css);
+@import url(./popup__image.css);
+
+/* MODIFICATORS */
+
+@import url(./popup_opened.css);
+@import url(./popup_closed.css);
+@import url(./popup_dark.css);
+@import url(./popup__field_type_error.css);
+@import url(./popup__field-error_active.css);
+@import url(./popup__save-button_inactive.css);
+
+@import url(./element__like-button_active.css);
+
