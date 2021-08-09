@@ -3,6 +3,7 @@
     border-radius: 100%;
     grid-row: 1;
     grid-column: 1;
+    border: 1px solid black;
 }
 
 @media (max-width: 900px) {
